@@ -8,7 +8,7 @@
   white-space: nowrap;
   overflow: hidden;    
   font-family: 'Source Code Pro', monospace;  
-  font-size: 28px;
+  font-size: 18px;
   /* color: rgba(255,255,255,.70); */
 }
 
@@ -22,7 +22,7 @@
 
 @keyframes animated-text{
   from{width: 0;}
-  to{width: 400px;}
+  to{width: 250px;}
 }
 
 /* cursor animations */
