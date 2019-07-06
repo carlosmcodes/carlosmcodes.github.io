@@ -1,23 +1,30 @@
-const http = require('http');
-const fs = require('fs');
+var express = require('express');
 
-const server = http.createServer(function(req, res){
-    if(req.url === '/formSheet'){
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        fs.createReadStream('../form/formSheet.html').pipe(res);
-        
-        // res.writeHead(200, {'Content-Type': 'text/javascript'});
-        // fs.createReadStream('../verifyInput.js').pipe(res);
-    }
-    else if(req.url === '/carlosm'){
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        fs.createReadStream('../index.html').pipe(res);
-    }
-    else {
-        res.writeHead(404, {'Content-Type': 'text/html'});
-        fs.createReadStream('./404.html').pipe(res);
-    }
+var app = express();
+app.set('view engine', 'ejs');
+
+const path = require('path');
+// const form = path.join(__dirname, '../form');
+const index = path.join(__dirname, '../');
+const style = path.join(__dirname, '../style');
+
+
+// app.use(express.static(form));
+app.use(express.static(index));
+app.use(express.static(style));
+app.get('/profile', function(req, res){
+    res.render('profile');
 });
 
-server.listen(3000, '127.0.0.1');
-console.log(`Server running at http://127.0.0.1:3000/`);
+app.get('/404', function(req, res){
+    res.render('404');
+});
+
+app.get('/form', function(req, res){
+    res.render('form');
+});
+
+app.get('/carlos', function(req, res){
+    res.render('carlos');
+});
+app.listen(3000);
