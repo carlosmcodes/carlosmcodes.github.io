@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <h1> embedded js tutorials</h1>
+    <p>try not to break anything</p>
+    <p>welcome to the page of <%= person %></p>
+    <p><strong>I am: </strong><%= data.age %></p>
+    <p><strong>I work at:</strong> <%= data.job %></p>
+    <h2>Hobbies
+        <ul>
+            <% data.hobbies.forEach(function(item){ %>
+            <li> <%= item%> </li>
+            <%}); %>
+        </ul>
+    </h2>
+</body>
+
+</html>
