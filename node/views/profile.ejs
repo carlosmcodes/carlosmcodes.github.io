@@ -4,6 +4,8 @@
 <head></head>
 
 <body>
+
+    <% include partials/nav.ejs %>
     <h1> embedded js tutorials</h1>
     <p>try not to break anything</p>
     <p>welcome to the page of <%= person %></p>
@@ -12,8 +14,8 @@
     <h2>Hobbies
         <ul>
             <% data.hobbies.forEach(function(item){ %>
-            <li> <%= item%> </li>
-            <%}); %>
+            <li> <%= item %> </li>
+            <% }); %>
         </ul>
     </h2>
 </body>
