@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <% include partials/nav.ejs %>
+    <h1> form successpage</h1>
+    <p>Thank you <%= data.Name %>  </p>
+    <p>We've recieved your information as follows:</p>
+    <ul>
+        <li><%= data.Password %> </li>
+        <li><%= data.Telephone %> </li>
+        <li> <%= data.Address %></li>
+        <li> <%= data.Email %></li>
+        <li> <%= data.Comment %></li>
+    </ul>
+</body>
+
+</html>

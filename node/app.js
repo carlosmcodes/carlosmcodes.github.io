@@ -1,30 +1,17 @@
 var express = require('express');
-
 var app = express();
 app.set('view engine', 'ejs');
+app.use(require('./routes'));
 
+//  these get the path of the external files and
+//  import them into our ejs
 const path = require('path');
-// const form = path.join(__dirname, '../form');
-const index = path.join(__dirname, '../');
-const style = path.join(__dirname, '../style');
 
+// grabs verifyInput.js file
+app.use('/form', express.static(path.join(__dirname, '../form')));
 
-// app.use(express.static(form));
-app.use(express.static(index));
-app.use(express.static(style));
-app.get('/profile', function(req, res){
-    res.render('profile');
-});
+app.use(express.static(path.join(__dirname, '../style')));
 
-app.get('/404', function(req, res){
-    res.render('404');
-});
+app.use('/resources', express.static(path.join(__dirname, '../resources')));
 
-app.get('/form', function(req, res){
-    res.render('form');
-});
-
-app.get('/carlos', function(req, res){
-    res.render('carlos');
-});
 app.listen(3000);

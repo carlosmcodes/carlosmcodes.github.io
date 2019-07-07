@@ -1,8 +1,10 @@
 var checkr = document.forms.form;
 var message = document.getElementById("message");
 
-checkr.onsubmit = function () {
+checkr.value
 
+checkr.onsubmit = function () {
+    
     if (checkr.first.value > 60) {
         message.innerHTML("try a shorter name");
         return false;
@@ -14,5 +16,6 @@ checkr.onsubmit = function () {
         message.innerHTML = "";
         return true;
     }
+
 
 };
